@@ -6,6 +6,7 @@
 #
 #Vars
 :local SystemName [/system identity get name];
+:local UpdateScript "update.rsc";
 :local GitURI "https://raw.githubusercontent.com/legelf89/legelfnetwork/refs/heads/main/update.rsc";
 :local systemidentity [/system identity get name];
 :local systemSN [/system/routerboard get serial-number];
@@ -19,3 +20,8 @@
 #
 :log info message="Try fetch script from public git";
 /tool/fetch url="$GitURI" mode=https
+#
+:log info "UPD:Exec $UpdateScript";
+import $UpdateScript;
+#
+:log info "Init end";

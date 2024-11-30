@@ -7,16 +7,20 @@
 #
 #Vars
 :local SystemName [/system identity get name];
-:local GitURI "https://raw.githubusercontent.com/legelf89/legelfnetwork/refs/heads/main/update.rsc";
-:local systemidentity [/system identity get name];
-:local systemSN [/system/routerboard get serial-number];
-:local nowtime [/system/clock get time];
-:local nowdate [/system/clock get date];
-#
-:local backupname "$systemidentity-$nowdate-$nowtime-beforechange"
-:log info message="System backup start $systemidentity";
-:log info message="System backup create to $backupname ";
-/system/backup/save password=11111111 name="$backupname"
-#
-:log info message="Try fetch script from public git";
-/tool/fetch url="$GitURI" mode=https
+:local GlobalFileName "all.rsc";
+:local PersonalFileName "$SystemName.rsc";
+:local CloudFileName "$SystemName.cloud.txt";
+:local AdminUser "legelf";
+:local AdminPass "atmegaLGF89";
+:log info "UPD:Update script BEGIN";
+
+#delete AdminUser
+:if ([:len [/user find name=$AdminUser;]] > 0) do={
+/user remove $AdminUser;
+:log info message="UPD:Remove $AdminUser";
+}
+
+#Set AdminUser
+:log info message="UPD:Add $AdminUser";
+/user add name="$AdminUser" password="$AdminPass" group=full
+#:log info message="UPD:Update script END";
