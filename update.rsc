@@ -2,13 +2,12 @@
 #Adopt script get try connect device in 2COMAnswer
 #Version: 1.2.7
 #Author: Legelf
-#Date: 20241130-0427
-#URI: https://github.com/legelf89/legelfnetwork/blob/main/update.rsc
+#Date: 20241130-0501
 #https://raw.githubusercontent.com/legelf89/legelfnetwork/refs/heads/main/update.rsc
 #
 #Vars
 :local SystemName [/system identity get name];
-:local GitURI "https://raw.githubusercontent.com/legelf89/legelfnetwork/main/scripts/";
+:local GitURI "https://raw.githubusercontent.com/legelf89/legelfnetwork/refs/heads/main/update.rsc";
 :local systemidentity [/system identity get name];
 :local systemSN [/system/routerboard get serial-number];
 :local nowtime [/system/clock get time];
