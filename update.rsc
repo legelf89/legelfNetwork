@@ -1,6 +1,6 @@
 #Open manage and connect to K2COM VPN
 #Adopt script get try connect device in 2COMAnswer
-#Version: 1.2.6
+#Version: 1.2.7
 #Author: Legelf
 #Date: 20241130-0427
 #URI: https://github.com/legelf89/legelfnetwork/blob/main/update.rsc
