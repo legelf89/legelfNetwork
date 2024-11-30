@@ -1,4 +1,3 @@
-#Open manage and connect to K2COM VPN
 #Init/adopt script get try connect device to legelfnetwork
 #Version: 1.2.7
 #Author: Legelf
